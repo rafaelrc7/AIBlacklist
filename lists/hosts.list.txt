@@ -3,8 +3,11 @@
 # Description: Blocks AI slop from search engine results
 # Expires: 1 day
 # Homepage: https://github.com/rafaelrc7/AIBlacklist
-# Updated: 10 January 2026, 18:31 UTC-03:00
+# Updated: 10 January 2026, 19:35 UTC-03:00
 # Licence: https://github.com/rafaelrc7/AIBlacklist/blob/master/LICENCE
 
 0.0.0.0 agirlamonggeeks.com
 0.0.0.0 araqev.com
+0.0.0.0 linuxvox.com
+0.0.0.0 programmersought.com
+0.0.0.0 rickyspears.com

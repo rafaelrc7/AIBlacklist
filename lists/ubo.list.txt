@@ -3,7 +3,7 @@
 ! Description: Blocks AI slop from search engine results
 ! Expires: 1 day
 ! Homepage: https://github.com/rafaelrc7/AIBlacklist
-! Updated: 10 January 2026, 18:31 UTC-03:00
+! Updated: 10 January 2026, 19:35 UTC-03:00
 ! Licence: https://github.com/rafaelrc7/AIBlacklist/blob/master/LICENCE
 
 ||agirlamonggeeks.com^$all
@@ -20,3 +20,24 @@ lite.duckduckgo.com##tbody > tr:has(> td > a[href*="araqev.com"]):xpath(self::* 
 search.brave.com###results > div:has(a[href*="araqev.com"])
 startpage.com##.w-gl .result:has(a[href*="araqev.com"])
 ecosia.org###main .result:has(a[href*="araqev.com"])
+||linuxvox.com^$all
+google.*###rso .MjjYud a[href*="linuxvox.com"]:upward(.MjjYud)
+duckduckgo.com,bing.com##.react-results--main > li:has(a[href*="linuxvox.com"])
+lite.duckduckgo.com##tbody > tr:has(> td > a[href*="linuxvox.com"]):xpath(self::* | following-sibling::*[position() <= 3])
+search.brave.com###results > div:has(a[href*="linuxvox.com"])
+startpage.com##.w-gl .result:has(a[href*="linuxvox.com"])
+ecosia.org###main .result:has(a[href*="linuxvox.com"])
+||programmersought.com^$all
+google.*###rso .MjjYud a[href*="programmersought.com"]:upward(.MjjYud)
+duckduckgo.com,bing.com##.react-results--main > li:has(a[href*="programmersought.com"])
+lite.duckduckgo.com##tbody > tr:has(> td > a[href*="programmersought.com"]):xpath(self::* | following-sibling::*[position() <= 3])
+search.brave.com###results > div:has(a[href*="programmersought.com"])
+startpage.com##.w-gl .result:has(a[href*="programmersought.com"])
+ecosia.org###main .result:has(a[href*="programmersought.com"])
+||rickyspears.com^$all
+google.*###rso .MjjYud a[href*="rickyspears.com"]:upward(.MjjYud)
+duckduckgo.com,bing.com##.react-results--main > li:has(a[href*="rickyspears.com"])
+lite.duckduckgo.com##tbody > tr:has(> td > a[href*="rickyspears.com"]):xpath(self::* | following-sibling::*[position() <= 3])
+search.brave.com###results > div:has(a[href*="rickyspears.com"])
+startpage.com##.w-gl .result:has(a[href*="rickyspears.com"])
+ecosia.org###main .result:has(a[href*="rickyspears.com"])
