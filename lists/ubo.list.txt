@@ -1,0 +1,22 @@
+! Title: AIBlocklist
+! Version: 1.0.26.01.10-0
+! Description: Blocks AI slop from search engine results
+! Expires: 1 day
+! Homepage: https://github.com/rafaelrc7/AIBlacklist
+! Updated: 10 January 2026, 18:31 UTC-03:00
+! Licence: https://github.com/rafaelrc7/AIBlacklist/blob/master/LICENCE
+
+||agirlamonggeeks.com^$all
+google.*###rso .MjjYud a[href*="agirlamonggeeks.com"]:upward(.MjjYud)
+duckduckgo.com,bing.com##.react-results--main > li:has(a[href*="agirlamonggeeks.com"])
+lite.duckduckgo.com##tbody > tr:has(> td > a[href*="agirlamonggeeks.com"]):xpath(self::* | following-sibling::*[position() <= 3])
+search.brave.com###results > div:has(a[href*="agirlamonggeeks.com"])
+startpage.com##.w-gl .result:has(a[href*="agirlamonggeeks.com"])
+ecosia.org###main .result:has(a[href*="agirlamonggeeks.com"])
+||araqev.com^$all
+google.*###rso .MjjYud a[href*="araqev.com"]:upward(.MjjYud)
+duckduckgo.com,bing.com##.react-results--main > li:has(a[href*="araqev.com"])
+lite.duckduckgo.com##tbody > tr:has(> td > a[href*="araqev.com"]):xpath(self::* | following-sibling::*[position() <= 3])
+search.brave.com###results > div:has(a[href*="araqev.com"])
+startpage.com##.w-gl .result:has(a[href*="araqev.com"])
+ecosia.org###main .result:has(a[href*="araqev.com"])
