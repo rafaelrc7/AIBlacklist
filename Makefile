@@ -11,7 +11,7 @@ MAKEFLAGS += -j$(shell nproc)
 
 ######################### Project Settings ###################################
 
-export TITLE = AIBlocklist
+export TITLE = AIBlacklist
 export DESCRIPTION = Blocks AI slop from search engine results
 export HOMEPAGE = https://github.com/rafaelrc7/AIBlacklist
 export LICENCE = https://github.com/rafaelrc7/AIBlacklist/blob/master/LICENCE
