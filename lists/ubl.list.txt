@@ -1,9 +1,9 @@
 # Title: AIBlacklist
-# Version: 1.0.26.01.10-0
+# Version: 1.0.26.01.11-0
 # Description: Blocks AI slop from search engine results
 # Expires: 1 day
 # Homepage: https://github.com/rafaelrc7/AIBlacklist
-# Updated: 10 January 2026, 21:43 UTC-03:00
+# Last Updated: 11 January 2026, 00:41 UTC-03:00
 # Licence: https://github.com/rafaelrc7/AIBlacklist/blob/master/LICENCE
 
 *://*.agirlamonggeeks.com/*

@@ -11,37 +11,68 @@ MAKEFLAGS += -j$(shell nproc)
 
 ######################### Project Settings ###################################
 
-export TITLE = AIBlacklist
-export DESCRIPTION = Blocks AI slop from search engine results
-export HOMEPAGE = https://github.com/rafaelrc7/AIBlacklist
-export LICENCE = https://github.com/rafaelrc7/AIBlacklist/blob/master/LICENCE
-export EXPIRES = 1 day
-export UPDATED != date +'%d %B %Y, %R UTC%:z'
+# List Header Information
+export title = AIBlacklist
+export description = Blocks AI slop from search engine results
+export homepage = https://github.com/rafaelrc7/AIBlacklist
+export licence = https://github.com/rafaelrc7/AIBlacklist/blob/master/LICENCE
+export expires = 1 day
+export updated != date +'%d %B %Y, %R UTC%:z'
 
-export VERSION_MAJOR = 1
-export VERSION_MINOR = 0
-export VERSION_PATCH = 0
-export VERSION_DATE != date +'%y.%m.%d'
-export VERSION = $(VERSION_MAJOR).$(VERSION_MINOR).$(VERSION_DATE)-$(VERSION_PATCH)
+version_major = 1
+version_minor = 0
+version_patch = 0
+version_date != date +'%y.%m.%d'
+export version = $(version_major).$(version_minor).$(version_date)-$(version_patch)
 
-lists = $(outdir)/ubo.list.txt $(outdir)/ubl.list.txt $(outdir)/hosts.list.txt
-
-sources = $(srcdir)/domains.txt
-
+# Project Directories
 srcdir = domains
 bindir = scripts
 outdir = lists
 
+# Combined Domains List File
+combined-domains = combined-domains.txt
+
+# Blocked Search Engines
+export UBLOCK_SEARCH_ENGINES ?= bing;brave;duckduckgo;ecosia;google;startpage
+
+# Input Domains Lists
+sources = $(srcdir)/domains.txt
+
+# Output Lists
+lists = \
+$(outdir)/hosts.list.txt \
+$(outdir)/ubl.list.txt \
+$(outdir)/ubo.list.txt \
+$(outdir)/ubo.bing.txt \
+$(outdir)/ubo.brave.txt \
+$(outdir)/ubo.duckduckgo.txt \
+$(outdir)/ubo.ecosia.txt \
+$(outdir)/ubo.google.txt \
+$(outdir)/ubo.startpage.txt \
+
+# Rules
 all: $(lists)
 
-ubo.%: $(sources) | $(outdir)
-	cat $(^:%="%") | $(bindir)/gen-ubo.sh > "$@"
+# Search Engine Specific UBO BlackLists
+$(outdir)/ubo.bing.txt: UBLOCK_SEARCH_ENGINES = bing
+$(outdir)/ubo.brave.txt: UBLOCK_SEARCH_ENGINES = brave
+$(outdir)/ubo.duckduckgo.txt: UBLOCK_SEARCH_ENGINES = duckduckgo
+$(outdir)/ubo.ecosia.txt: UBLOCK_SEARCH_ENGINES = ecosia
+$(outdir)/ubo.google.txt: UBLOCK_SEARCH_ENGINES = google
+$(outdir)/ubo.startpage.txt: UBLOCK_SEARCH_ENGINES = startpage
 
-ubl.%: $(sources) | $(outdir)
-	cat $(^:%="%") | $(bindir)/gen-ubl.sh > "$@"
+$(combined-domains): $(sources)
+	cat $(^:%="%") > "$@"
 
-hosts.%: $(sources) | $(outdir)
-	cat $(^:%="%") | $(bindir)/gen-hosts.sh > "$@"
+ubo.%: $(combined-domains) | $(outdir)
+	$(bindir)/gen-ubo.sh < $< > "$@"
+
+ubl.%: $(combined-domains) | $(outdir)
+	$(bindir)/gen-ubl.sh < $< > "$@"
+
+hosts.%: $(combined-domains) | $(outdir)
+	$(bindir)/gen-hosts.sh < $< > "$@"
 
 $(outdir):
 	@$(MKDIR_P) $@
@@ -58,6 +89,7 @@ check:
 	done
 
 clean:
+	$(RM) $(combined-domains)
 	$(RM) $(lists)
 
 MKDIR_P ?= mkdir -p
