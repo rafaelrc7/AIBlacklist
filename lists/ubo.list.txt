@@ -3,7 +3,7 @@
 ! Description: Blocks AI slop from search engine results
 ! Expires: 1 day
 ! Homepage: https://github.com/rafaelrc7/AIBlacklist
-! Updated: 10 January 2026, 19:40 UTC-03:00
+! Updated: 10 January 2026, 21:43 UTC-03:00
 ! Licence: https://github.com/rafaelrc7/AIBlacklist/blob/master/LICENCE
 
 ||agirlamonggeeks.com^$all
@@ -13,6 +13,13 @@ lite.duckduckgo.com##tbody > tr:has(> td > a[href*="agirlamonggeeks.com"]):xpath
 search.brave.com###results > div:has(a[href*="agirlamonggeeks.com"])
 startpage.com##.w-gl .result:has(a[href*="agirlamonggeeks.com"])
 ecosia.org###main .result:has(a[href*="agirlamonggeeks.com"])
+||allthings.how^$all
+google.*###rso .MjjYud a[href*="allthings.how"]:upward(.MjjYud)
+duckduckgo.com,bing.com##.react-results--main > li:has(a[href*="allthings.how"])
+lite.duckduckgo.com##tbody > tr:has(> td > a[href*="allthings.how"]):xpath(self::* | following-sibling::*[position() <= 3])
+search.brave.com###results > div:has(a[href*="allthings.how"])
+startpage.com##.w-gl .result:has(a[href*="allthings.how"])
+ecosia.org###main .result:has(a[href*="allthings.how"])
 ||araqev.com^$all
 google.*###rso .MjjYud a[href*="araqev.com"]:upward(.MjjYud)
 duckduckgo.com,bing.com##.react-results--main > li:has(a[href*="araqev.com"])
@@ -20,6 +27,20 @@ lite.duckduckgo.com##tbody > tr:has(> td > a[href*="araqev.com"]):xpath(self::* 
 search.brave.com###results > div:has(a[href*="araqev.com"])
 startpage.com##.w-gl .result:has(a[href*="araqev.com"])
 ecosia.org###main .result:has(a[href*="araqev.com"])
+||codegenes.net^$all
+google.*###rso .MjjYud a[href*="codegenes.net"]:upward(.MjjYud)
+duckduckgo.com,bing.com##.react-results--main > li:has(a[href*="codegenes.net"])
+lite.duckduckgo.com##tbody > tr:has(> td > a[href*="codegenes.net"]):xpath(self::* | following-sibling::*[position() <= 3])
+search.brave.com###results > div:has(a[href*="codegenes.net"])
+startpage.com##.w-gl .result:has(a[href*="codegenes.net"])
+ecosia.org###main .result:has(a[href*="codegenes.net"])
+||commandmasters.com^$all
+google.*###rso .MjjYud a[href*="commandmasters.com"]:upward(.MjjYud)
+duckduckgo.com,bing.com##.react-results--main > li:has(a[href*="commandmasters.com"])
+lite.duckduckgo.com##tbody > tr:has(> td > a[href*="commandmasters.com"]):xpath(self::* | following-sibling::*[position() <= 3])
+search.brave.com###results > div:has(a[href*="commandmasters.com"])
+startpage.com##.w-gl .result:has(a[href*="commandmasters.com"])
+ecosia.org###main .result:has(a[href*="commandmasters.com"])
 ||linuxvox.com^$all
 google.*###rso .MjjYud a[href*="linuxvox.com"]:upward(.MjjYud)
 duckduckgo.com,bing.com##.react-results--main > li:has(a[href*="linuxvox.com"])
@@ -41,3 +62,10 @@ lite.duckduckgo.com##tbody > tr:has(> td > a[href*="rickyspears.com"]):xpath(sel
 search.brave.com###results > div:has(a[href*="rickyspears.com"])
 startpage.com##.w-gl .result:has(a[href*="rickyspears.com"])
 ecosia.org###main .result:has(a[href*="rickyspears.com"])
+||tech2geek.net^$all
+google.*###rso .MjjYud a[href*="tech2geek.net"]:upward(.MjjYud)
+duckduckgo.com,bing.com##.react-results--main > li:has(a[href*="tech2geek.net"])
+lite.duckduckgo.com##tbody > tr:has(> td > a[href*="tech2geek.net"]):xpath(self::* | following-sibling::*[position() <= 3])
+search.brave.com###results > div:has(a[href*="tech2geek.net"])
+startpage.com##.w-gl .result:has(a[href*="tech2geek.net"])
+ecosia.org###main .result:has(a[href*="tech2geek.net"])
